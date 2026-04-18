@@ -34,6 +34,28 @@
             <div class="carousel-caption">Descrição da imagem atual.</div>
         </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>Email: <a href="mailto:contato@rappecca.org">contato@rappecca.org</a></p>
+                <p>Telefone: (00) 0000-0000</p>
+                <p>Endereço: Rua Exemplo, 123</p>
+            </div>
+            <div class="footer-admin">
+                <h4>Área do Administrador</h4>
+                <p>Solicite acesso administrativo <a href="#" id="admin-docs-link" data-docs-placeholder="SUBSTITUA_COM_URL_DO_DOCS">aqui</a>.</p>
+                <!-- ATENÇÃO: substitua o atributo href do link acima com a URL do seu documento (docs).
+                     Exemplo: <a href="https://link-para-seus-docs.example">aqui</a>
+                     O atributo `data-docs-placeholder` indica onde alterar. -->
+            </div>
+            <div class="footer-about">
+                <p>Rapecca &copy; <span id="year"></span></p>
+                <p>Conectando projetos e pessoas.</p>
+            </div>
+        </div>
+    </footer>
     
     <script>
         let currentSlide = 0;
@@ -61,6 +83,26 @@
         });
 
         showSlide(currentSlide);
+        // set footer year
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // admin request form handling (placeholder)
+        const adminForm = document.getElementById('admin-request-form');
+        const adminMsg = document.getElementById('admin-msg');
+        if (adminForm) {
+            adminForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('admin-email').value.trim();
+                if (!email) {
+                    adminMsg.textContent = 'Por favor insira um e-mail válido.';
+                    return;
+                }
+                // Placeholder: aqui você pode integrar com backend para processar a solicitação
+                adminMsg.textContent = 'Solicitação enviada. Verificaremos e entraremos em contato.';
+                adminForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
