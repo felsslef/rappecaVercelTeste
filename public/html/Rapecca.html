@@ -23,7 +23,10 @@
         </div>
     </header>
 
-   
+   <main>
+
+<section class="hero">
+  <div class="carousel-wrapper" data-carousel>
     <div class="carousel-container">
         <div class="carousel">
             <div class="slide active"><img src="../img/carrossel/carrossel1.jpg" alt="Imagem 1"></div>
@@ -32,9 +35,23 @@
             <button class="prev">‹</button>
             <button class="next">›</button>
             <div class="carousel-caption">Descrição da imagem atual.</div>
-        </div>
     </div>
+<<<<<<< HEAD
+  </div>
+</section>
 
+<section class="eventos-section">
+  <div class="container">
+    <h2>Eventos</h2>
+
+    <div id="eventos-container"></div>
+  </div>
+</section>
+
+</main>
+=======
+
+>>>>>>> cddf93113824df8ca91e8a2e0c2bfac80988b621
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-contact">
@@ -59,7 +76,8 @@
     
     <script>
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+       const carousel = document.querySelector('[data-carousel]');
+       const slides = carousel.querySelectorAll('.slide');
         const descriptions = [
             'Descrição da imagem 1.',
             'Descrição da imagem 2.',
@@ -69,15 +87,15 @@
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             slides[index].classList.add('active');
-            document.querySelector('.carousel-caption').textContent = descriptions[index];
+            carousel.querySelector('.carousel-caption').textContent = descriptions[index];
         }
 
-        document.querySelector('.next').addEventListener('click', () => {
+        carousel.querySelector('.next').addEventListener('click', () => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         });
 
-        document.querySelector('.prev').addEventListener('click', () => {
+        carousel.querySelector('.prev').addEventListener('click', () => {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(currentSlide);
         });
@@ -103,6 +121,45 @@
                 adminForm.reset();
             });
         }
+
+        function criarEvento({ titulo, descricao, imagem }) {
+    const template = document.getElementById('evento-template');
+    const container = document.getElementById('eventos-container');
+
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector('img').src = imagem;
+    clone.querySelector('.evento-titulo').textContent = titulo;
+    clone.querySelector('.evento-descricao').textContent = descricao;
+
+    container.appendChild(clone);
+}
+
+    criarEvento({
+    titulo: "Feira Agroecológica",
+    descricao: "Venha conhecer produtores locais e alimentos sustentáveis.",
+    imagem: "../img/carrossel/carrossel1.jpg"
+});
+
+criarEvento({
+    titulo: "Oficina de Compostagem",
+    descricao: "Aprenda práticas sustentáveis para o dia a dia.",
+    imagem: "../img/carrossel/carrossel2.jpg"
+});
+
+
     </script>
+
+<template id="evento-template">
+  <div class="card-evento">
+    <img src="" alt="Imagem do evento">
+
+    <div class="card-evento-content">
+      <h3 class="evento-titulo"></h3>
+      <p class="evento-descricao"></p>
+    </div>
+  </div>
+</template>
+
 </body>
 </html>
