@@ -16,7 +16,7 @@ header nav div{
     padding: 0px 20px;
 }
 
-header {position:fixed; top:2%; left:12.5%; right:0; background:#DFC7B1; z-index:1000px; box-shadow:0 2px 8px #0F4129;  border-radius: 50px; width: 75%; padding: 1.2%;}
+header {position:fixed; top:2%; left:12.5%; right:0; background:#DFC7B1; z-index:1001; box-shadow:0 2px 8px #0F4129;  border-radius: 50px; width: 75%; padding: 1.2%;}
 
 
 body {
@@ -40,6 +40,27 @@ header img {position: absolute; top: -40px; height: 120px; left: -250px; z-index
 header nav ul {display:flex; gap:2rem; list-style:none; margin:0px; padding:0;}
 header nav a {text-decoration:none; color:#0F4129; font-weight:700; margin: 0; font-size: 1.5rem;}
 header nav a:hover {text-decoration:underline; text-decoration-color: #8D5235BF; text-decoration-thickness: 3px;}
+
+.titulo {
+    text-align: center;
+    margin: 70px 45% -60px 80px;
+    font-size: 2rem;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  
+
+}
+
+.divisorRed img {
+    display: block;
+    margin: 40px auto;
+    height:auto;
+    width: 60%;
+    border-radius: 60px;
+    /* arrumar isso pra ficar igual ao do figma, tá muito esquisita essa altura dele ai pprt*/
+    
+}
 
 .carousel-container {
     border: 8px solid #7f0000a4;
@@ -79,6 +100,10 @@ header nav a:hover {text-decoration:underline; text-decoration-color: #8D5235BF;
     height: 100%;
     object-fit: cover;
     display: block;
+    position: relative;
+    
+
+
 }
 
 .prev, .next {
@@ -122,3 +147,4 @@ header nav a:hover {text-decoration:underline; text-decoration-color: #8D5235BF;
 .description {
     display: none;
 }
+
