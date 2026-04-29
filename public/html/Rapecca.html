@@ -48,97 +48,65 @@
          <img src="../img/vermelho.png" alt="Divisor vermelho">  
     </div>
 
-<section class="eventos-section">
-  <div class="container">
-    <div class="titulo">
-         <h2>Outros Eventos</h1>   
+<section class="projects-section">
+    <div class="container">
+        <div class="titulo">
+            <h2>Outros eventos</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-box">
+                <a href="project1.html">
+                    <img src="../img/Outros Projetos/projeto1.jpg" alt="Projeto 1">
+                    <p>Descrição breve do Projeto 1.</p>
+                </a>
+            </div>
+            <div class="project-box">
+                <a href="project2.html">
+                    <img src="../img/project2.jpg" alt="Projeto 2">
+                    <p>Descrição breve do Projeto 2.</p>
+                </a>
+            </div>
+            <div class="project-box">
+                <a href="project3.html">
+                    <img src="../img/project3.jpg" alt="Projeto 3">
+                    <p>Descrição breve do Projeto 3.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="events-column">
+            <article class="event-row">
+                 <a href="project1.html">
+                <img src="../img/carrossel/carrossel1.jpg" alt="Feira Agroecológica">
+                </a>
+                <div class="event-row-content">
+                    <h3 class="event-row-title">Feira Agroecológica</h3>
+                    <p class="event-row-description">Venha conhecer produtores locais e alimentos sustentáveis neste evento especial.</p>
+                </div>
+            </article>
+            
+            
+            <article class="event-row">
+                <a href="project1.html">
+                <img src="../img/carrossel/carrossel1.jpg" alt="Feira Agroecológica">
+                </a>
+                <div class="event-row-content">
+                    <h3 class="event-row-title">Feira Agroecológica</h3>
+                    <p class="event-row-description">Venha conhecer produtores locais e alimentos sustentáveis neste evento especial.</p>
+                </div>
+            </article>
+        </div>
     </div>
-
-    <div id="eventos-container"></div>
-
-  </div>
 </section>
+
+
+<h1 id="ver-mais">Ver Mais</h1>
 
 </main>
 
-
-
     
-    <script>
-        let currentSlide = 0;
-       const carousel = document.querySelector('[data-carousel]');
-       const slides = carousel.querySelectorAll('.slide');
-        const descriptions = [
-            'Descrição da imagem 1.',
-            'Descrição da imagem 2.',
-            'Descrição da imagem 3.'
-        ];
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-            carousel.querySelector('.carousel-caption').textContent = descriptions[index];
-        }
-
-        carousel.querySelector('.next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        carousel.querySelector('.prev').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        showSlide(currentSlide);
-        // set footer year
-        const yearEl = document.getElementById('year');
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-        // admin request form handling (placeholder)
-        const adminForm = document.getElementById('admin-request-form');
-        const adminMsg = document.getElementById('admin-msg');
-        if (adminForm) {
-            adminForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = document.getElementById('admin-email').value.trim();
-                if (!email) {
-                    adminMsg.textContent = 'Por favor insira um e-mail válido.';
-                    return;
-                }
-                // Placeholder: aqui você pode integrar com backend para processar a solicitação
-                adminMsg.textContent = 'Solicitação enviada. Verificaremos e entraremos em contato.';
-                adminForm.reset();
-            });
-        }
-
-        function criarEvento({ titulo, descricao, imagem }) {
-    const template = document.getElementById('evento-template');
-    const container = document.getElementById('eventos-container');
-
-    const clone = template.content.cloneNode(true);
-
-    clone.querySelector('img').src = imagem;
-    clone.querySelector('.evento-titulo').textContent = titulo;
-    clone.querySelector('.evento-descricao').textContent = descricao;
-
-    container.appendChild(clone);
-}
-
-    criarEvento({
-    titulo: "Feira Agroecológica",
-    descricao: "Venha conhecer produtores locais e alimentos sustentáveis.",
-    imagem: "../img/carrossel/carrossel1.jpg"
-});
-
-criarEvento({
-    titulo: "Oficina de Compostagem",
-    descricao: "Aprenda práticas sustentáveis para o dia a dia.",
-    imagem: "../img/carrossel/carrossel2.jpg"
-});
-
-
-    </script>
+    
+    <script src="../js/script.js"></script>
 
 <template id="evento-template">
   <div class="card-evento">
@@ -151,5 +119,23 @@ criarEvento({
   </div>
 </template>
 
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-item">
+            <strong>Telefone</strong>
+            <p>+55 (XX) XXXX-XXXX</p>   
+        </div>
+        <div class="footer-item">
+            <strong>Endereço</strong>
+            <p>Rua Exemplo, 123 - Cidade - Estado</p>
+        </div>
+        <div class="footer-item">
+            <strong>Email</strong>
+            <p>contato@rappecca.com.br</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
+
+
