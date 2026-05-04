@@ -197,11 +197,23 @@ header nav a:hover {text-decoration:underline; text-decoration-color: #8D5235BF;
     font-size: 0.9rem;
 }
 
+.event-row-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event-row-description p {
+    margin: 0;
+}
+
 .events-column {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin: 32px auto 0 auto;
+    gap: 30px;
+    margin: 80px auto 0 auto;
     max-width: 1080px;
     width: calc(100% - 20px);
 }

@@ -22,34 +22,60 @@
             </nav>
         </div>
     </header>
-     
 
-  <div class="events-column">
-            <article class="event-row">
-                 <a href="project1.html">
-                <img src="../img/carrossel/carrossel1.jpg" alt="Feira Agroecológica">
-                </a>
-                <div class="event-row-content">
-                    <h3 class="event-row-title">Feira Agroecológica</h3>
-                    <p class="event-row-description">Venha conhecer produtores locais e alimentos sustentáveis neste evento especial.</p>
-                </div>
-            </article>
-            
-            
-            <article class="event-row">
-                <a href="project1.html">
-                <img src="../img/carrossel/carrossel1.jpg" alt="Feira Agroecológica">
-                </a>
-                <div class="event-row-content">
-                    <h3 class="event-row-title">Feira Agroecológica</h3>
-                    <p class="event-row-description">Venha conhecer produtores locais e alimentos sustentáveis neste evento especial.</p>
-                </div>
-            </article>
+    <section>
+        <div class="events-column" id="lista-projetos">
+            <p style="text-align: center; padding: 20px;">Carregando projetos...</p>
         </div>
-    </div>
-</section>
+    </section>
 
+    <script>
+        async function carregarDadosDoPocket() {
+            const container = document.getElementById('lista-projetos');
+            const pbUrl = 'http://127.0.0.1:8090'; 
+            
+            try {
+                const response = await fetch(`${pbUrl}/api/collections/posts/records`);
+                const data = await response.json();
 
+                container.innerHTML = '';
 
+                if (data.items.length === 0) {
+                    container.innerHTML = '<p style="text-align: center;">Nenhum projeto cadastrado no momento.</p>';
+                    return;
+                }
+
+                data.items.forEach(post => {
+                    
+                    // CORRIGIDO: post.Capa com 'C' maiúsculo
+                    const fotoUrl = post.Capa 
+                        ? `${pbUrl}/api/files/${post.collectionId}/${post.id}/${post.Capa}`
+                        : '../img/logoRapecca.png';
+
+                    const article = document.createElement('article');
+                    article.className = 'event-row';
+
+                    // CORRIGIDO: post.Titulo e post.Texto com letras maiúsculas
+                    article.innerHTML = `
+                        <a href="projeto-detalhe.html?id=${post.id}">
+                            <img src="${fotoUrl}" alt="${post.Titulo}">
+                        </a>
+                        <div class="event-row-content">
+                            <h3 class="event-row-title">${post.Titulo}</h3>
+                            <div class="event-row-description">${post.Texto}</div>
+                        </div>
+                    `;
+
+                    container.appendChild(article);
+                });
+
+            } catch (error) {
+                console.error("Erro ao carregar PocketBase:", error);
+                container.innerHTML = '<p style="text-align: center;">Erro ao carregar os posts.</p>';
+            }
+        }
+
+        carregarDadosDoPocket();
+    </script>
 </body>
 </html>
