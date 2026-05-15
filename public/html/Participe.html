@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ananias&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ananias&family=Montserrat&display=swap">
     <link rel="stylesheet" href="../css/style.css">
     <title>Participe - Rapecca</title>
 </head>
@@ -23,8 +23,38 @@
         </div>
     </header>
 
-    <h1>Página Participe</h1>
+    <div class = titulo>
+    <h1>Quer ser um voluntário?</h1>
+    </div>
     <p>Conteúdo principal da página Participe.</p>
-    <p><a href="index.html">Voltar ao início</a></p>
+
+      <p>Texto falando sobre como é ser um voluntário ou algo do tipo Lorem ipsum dolor sit amet consectetur adipiscing elit </p>
+
+    <div class = form-participar>
+
+    <form>
+
+        <p class = cadastre-se>Cadastre-se para participar dos nossos projetos!</p>
+
+     
+
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Telefone: </label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="message">Mensagem:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+
+        <input type="submit" value="Enviar">
+    </form>
+    </div>
+
+    <p class="inicio-link "><a href="Participe.html">Voltar ao início</a></p>
 </body>
 </html>
