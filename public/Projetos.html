@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ananias&display=swap">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Projetos - Rapecca</title>
     <style>
         body {
-            background-image: url('../img/ferramentasRed.png');
+            background-image: url('img/ferramentasRed.png');
             background-repeat: repeat-y;
             background-position: right top;
             background-size: auto 1150px;
@@ -20,7 +20,7 @@
 <body>
     <header>
         <div class="nav-wrapper">
-            <img src="../img/logoRapecca.png" alt="Logo Rapecca">
+            <img src="img/logoRapecca.png" alt="Logo Rapecca">
             <nav>
                 <ul>
                     <li><a href="index.html">Rapecca</a></li>
@@ -61,7 +61,7 @@
                     // CORRIGIDO: post.Capa com 'C' maiúsculo
                     const fotoUrl = post.Capa 
                         ? `${pbUrl}/api/files/${post.collectionId}/${post.id}/${post.Capa}`
-                        : '../img/logoRapecca.png';
+                        : 'img/logoRapecca.png';
 
                     const article = document.createElement('article');
                     article.className = 'event-row';

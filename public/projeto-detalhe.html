@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ananias&display=swap">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Detalhes do Projeto - Rapecca</title>
     <style>
         /* Um CSS básico só para estruturar a página do post, você pode adaptar no seu style.css depois */
 
         body {
-            background-image: url('../img/ferramentasRed.png');
+            background-image: url('img/ferramentasRed.png');
             background-repeat: repeat-y;
             background-position: right top;
             background-size: auto 1300px;
@@ -67,7 +67,7 @@
 <body>
     <header>
         <div class="nav-wrapper">
-            <img src="../img/logoRapecca.png" alt="Logo Rapecca">
+            <img src="img/logoRapecca.png" alt="Logo Rapecca">
             <nav>
                 <ul>
                     <li><a href="index.html">Rapecca</a></li>
@@ -114,7 +114,7 @@
                 // 3. Monta a imagem
                 const fotoUrl = post.Capa 
                     ? `${pbUrl}/api/files/${post.collectionId}/${post.id}/${post.Capa}`
-                    : '../img/logoRapecca.png';
+                    : 'img/logoRapecca.png';
 
                 // 4. Injeta as informações no HTML
                 container.innerHTML = `

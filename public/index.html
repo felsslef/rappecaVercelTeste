@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ananias&family=Montserrat&display=swap">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Rapecca</title>
 </head>
 <body class="rapecca-page">
     <header>
         <div class="nav-wrapper">
-             <img src="../img/logoRapecca.png" alt="Logo Rapecca">
+             <img src="img/logoRapecca.png" alt="Logo Rapecca">
             <nav>
                 <ul>
                     <li><a href="index.html">Rapecca</a></li>
@@ -34,9 +34,9 @@
   <div class="carousel-wrapper" data-carousel> 
     <div class="carousel-container">
         <div class="carousel">
-            <div class="slide active"><img src="../img/carrossel/carrossel1.jpg" alt="Imagem 1"></div>
-            <div class="slide"><img src="../img/carrossel/carrossel2.png" alt="Imagem 2"></div>
-            <div class="slide"><img src="../img/carrossel/carrossel3.png" alt="Imagem 3"></div>
+            <div class="slide active"><img src="img/carrossel/carrossel1.jpg" alt="Imagem 1"></div>
+            <div class="slide"><img src="img/carrossel/carrossel2.png" alt="Imagem 2"></div>
+            <div class="slide"><img src="img/carrossel/carrossel3.png" alt="Imagem 3"></div>
             <button class="prev">‹</button>
             <button class="next">›</button>
             <div class="carousel-caption">Descrição da imagem atual!</div>
@@ -45,7 +45,7 @@
 </section>
 
 <div class="divisorRed">
-         <img src="../img/vermelho.png" alt="Divisor vermelho">  
+         <img src="img/vermelho.png" alt="Divisor vermelho">  
     </div>
 
 <section class="projects-section">
@@ -57,19 +57,19 @@
         <div class="projects-grid">
             <div class="project-box">
                 <a href="project1.html">
-                    <img src="../img/Outros Projetos/projeto1.jpg" alt="Projeto 1">
+                    <img src="img/Outros Projetos/projeto1.jpg" alt="Projeto 1">
                     <p>Descrição breve do Projeto 1.</p>
                 </a>
             </div>
             <div class="project-box">
                 <a href="project2.html">
-                    <img src="../img/Outros Projetos/projeto2.png" alt="Projeto 2">
+                    <img src="img/Outros Projetos/projeto2.png" alt="Projeto 2">
                     <p>Descrição breve do Projeto 2.</p>
                 </a>
             </div>
             <div class="project-box">
                 <a href="project3.html">
-                    <img src="../img/Outros Projetos/projeto1.jpg" alt="Projeto 3">
+                    <img src="img/Outros Projetos/projeto1.jpg" alt="Projeto 3">
                     <p>Descrição breve do Projeto 3.</p>
                 </a>
             </div>
@@ -85,7 +85,7 @@
 
 </main>
     
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
         async function carregarUltimosProjetos() {
@@ -108,7 +108,7 @@
                 data.items.forEach(post => {
                     const fotoUrl = post.Capa 
                         ? `${pbUrl}/api/files/${post.collectionId}/${post.id}/${post.Capa}`
-                        : '../img/logoRapecca.png';
+                        : 'img/logoRapecca.png';
 
                     const article = document.createElement('article');
                     article.className = 'event-row';
@@ -166,3 +166,4 @@
 </footer>
 </body>
 </html>
+
