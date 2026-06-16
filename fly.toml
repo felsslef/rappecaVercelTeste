@@ -1,8 +1,17 @@
-app = "rappecavercelteste"
-primary_region = "gru"
+# fly.toml app configuration file generated for rappecavercelteste on 2026-06-16T20:23:55-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'rappecavercelteste'
+primary_region = 'gru'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
+
+[[mounts]]
+  source = 'pb_data'
+  destination = '/pb/pb_data'
 
 [http_service]
   internal_port = 8080
@@ -14,8 +23,6 @@ primary_region = "gru"
 
 [[vm]]
   size = 'shared-cpu-1x'
-  memory = '256MB'
-
-[mounts]
-  source = "pb_data"
-  destination = "/pb/pb_data"
+  memory = '256mb'
+  cpus = 1
+  memory_mb = 256
